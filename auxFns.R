@@ -29,12 +29,12 @@
      y="Mod=1.46"
    }else if(x==1.82){
      y="FairStrong=1.82"
-   }else if(x==2.5){
-     y="Strong=2.5"
-   }else if(x==4){
-     y="VeryStrong=4"
-   }else if(x==7.5){
-     y="ExtStrong=7.5"
+   }else if(x==2){
+     y="Strong=2"
+   }else if(x==3){
+     y="VeryStrong=3"
+   }else if(x==5){
+     y="ExtStrong=5"
    }else y="StrangeSSMD"
    return(y)
  }

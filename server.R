@@ -214,7 +214,7 @@ server <- function(input, output, session) {
       SSMDt1=t(future_sapply(vecc, getSSMDSingle, muNow=mu.t1,  
         nMi=nFOVsPerWell*nWellsPlateNonControls*nPlatesNonControls, dfPerFOVb=dfPerFOV, 
         XbarDMSOb=XbarDMSO, varDMSO=varSampDMSO,
-        sdModelb=sdModel, sdNow=sd.t1, nDMSOb=nDMSO))
+        sdModelb=sdModel, sdNow=sd.t1, nDMSOb=nDMSO, future.seed=TRUE))
     }
     cat('hereAAA\n')
     if(nt2>0){
@@ -222,14 +222,14 @@ server <- function(input, output, session) {
     SSMDt2=t(future_sapply(vecc, getSSMDSingle, muNow=mu.t2,  
       nMi=nFOVsPerWell*nWellsPlateNonControls*nPlatesNonControls, dfPerFOVb=dfPerFOV, 
       XbarDMSOb=XbarDMSO, varDMSO=varSampDMSO,
-      sdModelb=sdModel, sdNow=sd.t2, nDMSOb=nDMSO))
+      sdModelb=sdModel, sdNow=sd.t2, nDMSOb=nDMSO, future.seed=TRUE))
     }
     if(nt3>0){
     vecc=1:nt3
     SSMDt3=t(future_sapply(vecc, getSSMDSingle, muNow=mu.t3,  
       nMi=nFOVsPerWell*nWellsPlateNonControls*nPlatesNonControls, dfPerFOVb=dfPerFOV, 
       XbarDMSOb=XbarDMSO, varDMSO=varSampDMSO,
-      sdModelb=sdModel, sdNow=sd.t3, nDMSOb=nDMSO)) 
+      sdModelb=sdModel, sdNow=sd.t3, nDMSOb=nDMSO, future.seed=TRUE)) 
     }
     
     breaksNow=c(-200, 0.25, 0.5, 0.75, 1, 1.28, 1.64, 2, 3, 5, 200)
